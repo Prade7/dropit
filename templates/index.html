@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flask Google Login</title>
+</head>
+<body>
+  <h1>Welcome to Your App</h1>
+  {% if user_email %}
+    <p>You are logged in as: {{ user_email }}</p>
+    <a href="{{ url_for('logout') }}">Logout</a>
+  {% else %}
+    <a href="{{ url_for('login') }}">Login with Google</a>
+  {% endif %}
+
+  <script>
+    // (Optional) Add basic error handling for login failures
+    function handleLoginError(error) {
+      alert("There was an error during login. Please try again.");
+      console.error(error);
+    }
+  </script>
+</body>
+</head>
+</html>
